@@ -28,5 +28,11 @@
     "fhir_service": "https://fhirsandbox2.tsysinteropsvcs.net:8100/sites/123",
     "redirect_uri": "app.html",
     "client_id": "hspc"
+  },
+  {
+    "provider": "logica",
+    "fhir_service": "https://api.logicahealth.org/DaVinciDTS/data",
+    "redirect_uri": "app.html",
+    "client_id": "my_web_app"
   }
 ]

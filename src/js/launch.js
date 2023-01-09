@@ -1,11 +1,12 @@
 var iss = getParameterByName('iss');
 var launch = getParameterByName('launch');
 var client_id = "bilirubin_chart";
-var scopes = "launch patient/Patient.read patient/Observation.read patient/Observation.write";
+var scopes = "launch patient/Patient.read patient/Observation.read";
 var redirect_uri = "app.html";
 //The default_config can be changed in the pipeline to use different config files for different environments.
 var default_config = 'config.json';
 var config_path = 'config/' + default_config;
+
 
 jQuery.get(config_path, function(data) {
 
@@ -21,10 +22,12 @@ jQuery.get(config_path, function(data) {
     if (launch === "") {
         scopes = scopes + " launch/patient";
     }
-
+    console.log("iss: " + iss);
     console.log("client_id: " + client_id);
     console.log("scopes : " + scopes);
     console.log("redirect_uri : " + redirect_uri);
+
+    
     if (redirect_uri !== null) {
         FHIR.oauth2.authorize({
             "client_id": client_id,
@@ -37,6 +40,7 @@ jQuery.get(config_path, function(data) {
             "scope": scopes
         });
     }
+    
 });
 
 function getParameterByName(name) {

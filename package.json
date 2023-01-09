@@ -4,8 +4,8 @@
   "license": "Apache-2.0",
   "repository": "https://bitbucket.org/hspconsortium/bilirubin-risk-chart.git",
   "scripts": {
-    "serve": "./node_modules/http-server/bin/http-server src -p $npm_package_config_port --cors",
-    "start-server": "serve -s -p8086",
+    "serve": "http-server src -p 9090 --cors",
+    "start-server": "serve -s -p9090",
     "port": "8086"
   },
   "dependencies": {
